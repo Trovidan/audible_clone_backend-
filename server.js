@@ -19,7 +19,7 @@ var sessions = new Object();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: "*"}));
+app.use(cors({ credentials: true, origin: "https://audible-clone.netlify.app"}));
 
 //dbConfig
 mongoose.set('useFindAndModify', false);
@@ -403,7 +403,26 @@ app.post('/verifyAccount',(req,res)=>{
     }
   });
 });
-//default routing 
+//default routing
+
+app.get("/isRunning",(req,res)=>{
+  res.status(200).send("Server is up and running and connected to :" + process.env.MONGO_DB_URL);
+});
+
+app.get("/verifyDBConnection",(req,res)=>{
+  Book.find({}, (err, data) => {
+    if (err) {
+      // console.log(err);
+      res.status(274).send("Something Went Wrong!!! Can't connect to db");
+      return;
+    }
+    else {
+      // console.log(data);
+      res.status(203).send(data);
+      return;
+    }
+  });
+})
 app.post("*", (req, res) => {
   res.status(404).send("Invalid URL");
 });
