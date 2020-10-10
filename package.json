@@ -1,0 +1,36 @@
+{
+  "name": "audio-book-back",
+  "version": "0.1.0",
+  "main": "server.js",
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@supercharge/request-ip": "^1.1.2",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.5",
+    "nodemailer": "^6.4.13",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.3.0",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "universal-cookie": "^4.0.4"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No test specified\" ",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

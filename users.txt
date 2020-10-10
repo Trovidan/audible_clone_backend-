@@ -1,0 +1,22 @@
+db.users.insertMany([
+	{
+		name: "Pranav Mishra",
+		_id: "pranav07092k@gmail.com",
+            password: "1234567890",
+            wishlist: [],
+            library: [],
+            cart: [],
+            reviews: [],
+            verified: true
+	},
+      {
+		name: "Trovi",
+		_id: "imt_2018068@iiitm.ac.in",
+            password: "1234567890",
+            wishlist: [],
+            library: [],
+            cart: [],
+            reviews: [],
+            verified: true
+	}
+])
