@@ -19,7 +19,7 @@ var sessions = new Object();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors({credentials:true, origin: "http://localhost:3000"}));
+app.use(cors({ credentials: true, origin: "https://audible-clone.netlify.app"}));
 
 //dbConfig
 mongoose.set('useFindAndModify', false);
