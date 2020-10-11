@@ -123,12 +123,12 @@ app.get('/getList', (req, res) => {
   let sessionID = decoded.sessionID;
   console.log(sessions[sessionID]);
   if (sessionID === undefined || sessions[sessionID] === undefined) {
-    res.status(402).res("Session Expired!");
+    res.status(409).res("Session Expired!");
     return;
   }
   User.findById(sessions[sessionID], "library wishlist cart", (err, doc) => {
     if (err) {
-      res.status(402).res("Invalid Account!");
+      res.status(405).res("Invalid Account!");
       return;
     }
     res.status(200).send(doc);
