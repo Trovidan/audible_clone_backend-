@@ -115,10 +115,9 @@ const moveDB = (fieldName, id, val,fromFieldName) => {
   });
 }
 
-app.get('/getList', (req, res) => {
+app.post('/getList', (req, res) => {
   console.log("called getlist");
-  let decoded = decodeJWT(req.cookies.sessionID, Requestip.getClientIp(req));
-  console.log(req.cookies.sessionID);
+  let decoded = decodeJWT(req.body.sessionID, Requestip.getClientIp(req));
   console.log(decoded);
   let sessionID = decoded.sessionID;
   console.log(sessions[sessionID]);
@@ -136,11 +135,10 @@ app.get('/getList', (req, res) => {
   });
 });
 
-app.get("/checkSession", (req, res) => {
+app.post("/checkSession", (req, res) => {
 
   console.log("called checksession");
-  console.log(req.cookies);
-  let decoded = decodeJWT(req.cookies.sessionID, Requestip.getClientIp(req));
+  let decoded = decodeJWT(req.body.sessionID, Requestip.getClientIp(req));
   let sessionID = decoded.sessionID;
   // console.log(sessionID);
   if (sessionID === undefined || sessions[sessionID] === undefined) {
