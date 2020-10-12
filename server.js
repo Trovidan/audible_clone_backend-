@@ -155,7 +155,7 @@ app.post("/checkSession", (req, res) => {
 
 app.post("/updateRecord", (req, res) => {
   console.log("called Update Record");
-  let decoded = decodeJWT(req.cookies.sessionID, Requestip.getClientIp(req));
+  let decoded = decodeJWT(req.body.sessionID, Requestip.getClientIp(req));
   let sessionID = decoded.sessionID;
   let {fieldName, val, fromFieldName, type } = req.body;
   let id = sessions[sessionID]===undefined?undefined:sessions[sessionID];
@@ -323,7 +323,7 @@ app.post("/createAccount", (req, res) => {
 app.post("/personelDetails", (req, res) => {
   console.log("called personel details");
   //Will handle every personel details except reviews
-  let decoded = decodeJWT(req.cookies.sessionID, Requestip.getClientIp(req));
+  let decoded = decodeJWT(req.body.sessionID, Requestip.getClientIp(req));
   let id = sessions[decoded.sessionID];
   let projection = req.body.projection;
 
