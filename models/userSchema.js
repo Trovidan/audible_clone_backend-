@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   library: [mongoose.ObjectId],
   cart: [mongoose.ObjectId],
   verified: Boolean,
-  reviews: [{ BookID: mongoose.ObjectId, reviewID: mongoose.ObjectId}],
+  reviews: [String],
 });
 
 export default mongoose.model('User',userSchema);

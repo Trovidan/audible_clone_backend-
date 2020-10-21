@@ -6,6 +6,8 @@ const bookSchema = new mongoose.Schema({
   author: [String],
   narratedBy: [String],
   rating: Number,
+  totalReviewPoint: Number,
+  totalReview: Number,
   genre: [String],
   category: String,
   imageUri: String,
@@ -18,8 +20,7 @@ const bookSchema = new mongoose.Schema({
   language: String,
   publisher:String,
   programType: String,
-  //_id => reviewID as Well as UserID
-  reviews: [{_id: String, rating: Number, review: String}]
+  reviews: [String]
 });
 
 export default mongoose.model("Book",bookSchema);

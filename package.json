@@ -24,6 +24,7 @@
     "react-cookie": "^4.0.3",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
+    "requirejs": "^2.3.6",
     "universal-cookie": "^4.0.4"
   },
   "type": "module",
