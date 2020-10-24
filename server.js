@@ -8,6 +8,7 @@ import books from './routes/books.js';
 import users from './routes/users.js';
 import signup from './routes/signup.js';
 import verify from "./routes/verify.js";
+import reviews from "./routes/reviews.js";
 
 //appConfig 
 dotenv.config({ silent: process.env.NODE_ENV === 'production' });
@@ -34,7 +35,7 @@ app.use("/books", books);
 app.use("/user", users);
 app.use("/signup", signup);
 app.use("/verify",verify);
-
+app.use("/review",reviews);
 //default routing
 app.post("*", (req, res) => {
   res.status(404).send("Invalid URL");

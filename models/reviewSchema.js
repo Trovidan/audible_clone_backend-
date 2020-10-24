@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const reviewSchema = new mongoose.Schema({
     _id: String,
     user_id: String,
+    user_name: String,
     book_id: mongoose.ObjectId,
     rating: Number,
     title: String,
