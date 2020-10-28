@@ -4,6 +4,7 @@ import jwt from 'jsonwebtoken';
 import Requestip from '@supercharge/request-ip';
 import dotenv from 'dotenv';
 import User from '../models/userSchema.js';
+import Book from '../models/bookSchema.js';
 import nodemailer from 'nodemailer';
 
 dotenv.config({silent: process.env.NODE_ENV === 'production'});
